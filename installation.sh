@@ -1,4 +1,4 @@
-cp ~/Downloads/Log\ Spitter/logspitter.sh /usr/bin
+cp ~/Downloads/Log-Spitter-master/logspitter.sh /usr/bin
 
 ln -s /usr/bin/logspitter.sh/ ~/
 
