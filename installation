@@ -1,4 +1,4 @@
 sudo cp ~/Downloads/Log-Spitter-master/logspitter /usr/bin
 
-ln -s /usr/bin/logspitter/ ~/
+sudo cp ~/Downloads/Log-Spitter-master/logspitter ~/
 
