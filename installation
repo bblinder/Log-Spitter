@@ -1,3 +1,5 @@
+#!/bin/bash
+
 sudo cp ~/Downloads/Log-Spitter-master/logspitter /usr/bin/
 
 sudo cat ~/Downloads/Log-Spitter-master/alias.sh >> /private/etc/bashrc
