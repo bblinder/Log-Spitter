@@ -14,3 +14,7 @@ It should look something like this:
 "logspitter qt.log"
 
 Once you hit Enter, it should open a text document with the relevant keywords.
+
+(Note: if the text file doesn't open, move/copy the log file to your desktop and run logspitter again. This will eliminate any possible issues with conflicting file paths.)
+
+
