@@ -3,7 +3,9 @@
 if [[ -e /usr/bin/logspitter ]] 
 then
 	sudo rm /usr/bin/logspitter
-	sed -i 's/.*logspitter.*/####' ~/.bashrc
+	sed -e "s/.*logspitter.*/#/g" ~/.bashrc > ~/.bashrc
+
+
 	echo "The Logspitter tool has been removed from your system."
 
 else
