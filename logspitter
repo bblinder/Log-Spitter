@@ -1,9 +1,17 @@
 #!/bin/bash
 
-egrep -i '(error)|(fail)|(rtmp://)|(port)|(\!)\|(drop)|(stamp)|(lost)|(connect)|(connection)|(auth)|(slow)|(check)|(quality)|(suggestion)' $1 > /tmp/Logs.txt && open /tmp/Logs.txt 
+echo "Please drag your log file HERE and press ENTER"
+read logfile
 
-echo "All done!
+if [[ $logfile == *.log ]]
+then
+	echo "Thanks. Processing now..."
 
-Remember, this is to help narrow down possible causes.
+	egrep -i '(error)|(fail)|(rtmp://)|(port)|(\!)\|(drop)|(stamp)|(lost)|(connect)|(connection)|(auth)|(slow)|(check)|(quality)|(suggestion)' $logfile > /tmp/Logs.txt && open -a Sublime\ Text /tmp/Logs.txt
 
-It is highly recommended that you view the entire log file - you might otherwise miss crucial context."
+	echo "All done."
+else
+	echo "That is not a valid log file. Please try again."
+fi
+
+
