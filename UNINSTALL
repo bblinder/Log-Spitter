@@ -1,0 +1,11 @@
+#!/bin/bash
+
+if [[ -e /usr/bin/logspitter ]] 
+then
+	sudo rm /usr/bin/logspitter
+	echo "The Logspitter tool has been removed from your system."
+
+else
+	echo "You don't currently have the Logspitter tool installed on your system."
+fi
+
