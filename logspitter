@@ -1,5 +1,6 @@
 #!/bin/bash
 
+# First checks if Logspitter has been previously installed. If not, exits 0.
 if [[ ! -e /usr/bin/logspitter ]]
 then
 	echo "You don't currently have Logspitter installed. Please run the 'INSTALL' script."
@@ -9,7 +10,7 @@ fi
 echo "Please drag your log file HERE and press ENTER"
 read logfile
 
-if [[ $logfile == *.log ]]
+if [[ $logfile == *.log ]] ## will read Producer/Procaster logs
 then
 	echo "Thanks. Processing now..."
 
@@ -18,7 +19,7 @@ then
 	echo "All done."
 
 elif
-	[[ $logfile == *.txt ]]
+	[[ $logfile == *.txt ]] ## will read Studio logs
 
 then
 	echo "Thanks. Processing now..."
