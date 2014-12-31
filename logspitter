@@ -3,9 +3,8 @@
 if [[ ! -e /usr/bin/logspitter ]]
 then
 	echo "You don't currently have Logspitter installed. Please run the 'INSTALL' script."
+	exit 0
 fi
-
-exit 0
 
 echo "Please drag your log file HERE and press ENTER"
 read logfile
