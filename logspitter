@@ -17,7 +17,7 @@ elif
 then
 	echo "Thanks. Processing now..."
 
-	egrep -i '(error=203)|(error=301)|(error)|(error=)|(not\ found)|(rtmp://)|(http_status)|(usage)|(motherboard)|(lost)|(connect)|(connection)|(auth)|(tcp)|(socket)|(deleted)|(network)|(zixi)|(udp)|(code=)' $logfile > /tmp/Logs.filtered.txt | uniq -d -i && open /tmp/Logs.filtered.txt
+	egrep -i '(error=203)|(error=301)|error=)|(not\ found)|(rtmp://)|(http_status)|(usage)|(motherboard)|(lost)|(connect)|(connection)|(auth)|(tcp)|(socket)|(deleted)|(network)|(zixi)|(udp)|(code=)' $logfile > /tmp/Logs.filtered.txt | uniq -d -i && open /tmp/Logs.filtered.txt
 
 	echo "All done."
 else
