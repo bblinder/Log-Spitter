@@ -4,4 +4,6 @@ create_alias() {
 	alias logspitter='/usr/bin/logspitter'
 }
 
-sudo cp ~/Downloads/Log-Spitter-master/logspitter /usr/bin/ && cat $create_alias >> ~/.bashrc
+sudo cp ~/Downloads/Log-Spitter-master/logspitter /usr/bin/
+
+$create_alias >> ~/.bashrc
