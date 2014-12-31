@@ -10,8 +10,17 @@ then
 	egrep -i '(error)|(fail)|(rtmp://)|(port)|(\!)\|(drop)|(stamp)|(lost)|(connect)|(connection)|(auth)|(slow)|(check)|(quality)|(suggestion)' $logfile > /tmp/Logs.txt && open /tmp/Logs.txt
 
 	echo "All done."
+
+elif
+	[[ $logfile == *.txt ]]
+
+then
+	echo "Thanks. Processing now..."
+
+	egrep -i '(error=203)|(error=301)|(error)|(error=)|(not\ found)|(rtmp://)|(http_status)|(usage)|(motherboard)|(lost)|(connect)|(connection)|(auth)|(tcp)|(socket)|(deleted)|(network)|(zixi)|(udp)|(code=)' $logfile > /tmp/Logs.filtered.txt | uniq -d -i && open /tmp/Logs.filtered.txt
+
+	echo "All done."
 else
-	echo "That is not a valid log file. Please try again."
+	echo "Oops - not a valid log file. Please use a Studio '.txt' or Producer '.log' file and try again."
+
 fi
-
-
