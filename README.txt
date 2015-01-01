@@ -4,7 +4,7 @@ Once you've installed the ZIP, double-click the file called "INSTALL". This will
 
 You may need to enter your password and/or authorize it via your Mac's Security and Privacy section. 
 
-(While the install script is primariy meant for Mac OS X, the logspitter itself will run on any unix/linux system).
+(While the install script is primarily meant for Mac OS X, the logspitter itself will run on any unix/linux system, should you choose to manually install it yourself.)
 
 (NOTE: if you've previously installed the tool, run the UNINSTALL script first.)
 
