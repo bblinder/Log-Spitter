@@ -5,6 +5,13 @@ if [[ -e /usr/bin/logspitter ]]
   echo "Looks like Logspitter is already installed on your system."
   echo "To run it, simply type 'logspitter' and hit ENTER."
 
+elif
+  [[ ! -e ~/Downloads/Log-Spitter-master/logspitter ]]
+  then
+  echo "Could not complete install because a necessary file is missing."
+  echo "Please run the 'UNINSTALL' script and download a new copy of Logspitter at"
+  echo "https://github.com/bblinder/Log-Spitter/archive/master.zip"
+
 else
 
   sudo cp ~/Downloads/Log-Spitter-master/logspitter /usr/bin/
