@@ -18,4 +18,9 @@ else
 
   echo "alias logspitter='/usr/bin/logspitter'" >> ~/.bashrc
 
+    if [[ -e /usr/bin/logspitter ]]
+    echo "Success!"
+    
+    fi
+
 fi
