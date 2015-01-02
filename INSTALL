@@ -17,10 +17,7 @@ else
   sudo cp ~/Downloads/Log-Spitter-master/logspitter /usr/bin/
 
   echo "alias logspitter='/usr/bin/logspitter'" >> ~/.bashrc
+  echo "Success!"
 
-    if [[ -e /usr/bin/logspitter ]]
-    echo "Success!"
-    
-    fi
 
 fi
