@@ -1,5 +1,14 @@
 #!/bin/bash
 
-sudo cp ~/Downloads/Log-Spitter-master/logspitter /usr/bin/
+if [[ -e /usr/bin/logspitter ]]
+  then
+  echo "Looks like Logspitter is already installed on your system."
+  echo "To run it, simply type 'logspitter' and hit ENTER."
 
-echo "alias logspitter='/usr/bin/logspitter'" >> ~/.bashrc
+else
+
+  sudo cp ~/Downloads/Log-Spitter-master/logspitter /usr/bin/
+
+  echo "alias logspitter='/usr/bin/logspitter'" >> ~/.bashrc
+
+fi
