@@ -14,9 +14,21 @@ if [[ $logfile == *.log ]] ## will read Producer/Procaster logs
 then
 	echo "Thanks. Processing now..."
 
-	egrep -i '(error)|(fail)|(false)|(rtmp://)|(port)|(\!)\|(drop)|(stamp)|(lost)|(connect)|(connection)|(auth)|(slow)|(check)|(quality)|(suggestion)' $logfile > /tmp/Logs.txt && open /tmp/Logs.txt
+	egrep -i '(error)|(fail)|(false)|(rtmp://)|(port)|(\!)\|(drop)|(stamp)|(lost)|(connect)|(connection)|(auth)|(slow)|(check)|(quality)|(suggestion)' $logfile > /tmp/ProducerLogs.filtered.txt && open /tmp/ProducerLogs.filtered.txt
 
 	echo "All done."
+
+	echo "It's still recommended that you read the entire log file -- you may otherwise miss crucial context."
+	echo "Would you like to open the full log file? y/n?"
+	
+	read response
+
+	if [[ $response == "y" ]]
+	then
+		open $logfile
+	else
+		exit 0
+	fi
 
 elif
 	[[ $logfile == *.txt ]] ## will read Studio logs
@@ -24,11 +36,22 @@ elif
 then
 	echo "Thanks. Processing now..."
 
-	egrep -i '(error=203)|(error=301)|error=)|(not\ found)|(rtmp://)|(http_status)|(usage)|(motherboard)|(lost)|(connect)|(connection)|(auth)|(tcp)|(socket)|(deleted)|(network)|(zixi)|(udp)|(code=)' $logfile > /tmp/Logs.filtered.txt | uniq -d -i && open /tmp/Logs.filtered.txt
+	egrep -i '(error=203)|(error=301)|error=)|(not\ found)|(rtmp://)|(http_status)|(usage)|(motherboard)|(lost)|(connect)|(connection)|(auth)|(tcp)|(socket)|(deleted)|(network)|(zixi)|(udp)|(code=)' $logfile > /tmp/StudioLogs.filtered.txt | uniq -d -i && open /tmp/StudioLogs.filtered.txt
 
 	echo "All done."
-	echo "Remember, this to help narrow down possible causes. It's still recommended"
-	echo "that you view the entire log file -- you may otherwise miss crucial context"
+	echo "It's still recommended that you view the entire log file -- you may otherwise miss crucial context"
+
+
+	echo "Would you like to open the full log file? y/n?"
+	read response
+	
+	if [[ $response == "y" ]] 
+	then
+		open $logfile
+
+	else
+		exit 0
+	fi
 else
 	echo "Oops - not a valid log file. Please use a Studio '.txt' or Producer '.log' file and try again."
 
