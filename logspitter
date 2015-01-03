@@ -18,6 +18,7 @@ then
 
 	echo "All done."
 
+	## Asks if user would like to open original log file for comparison.
 	echo "It's still recommended that you view the entire log file -- you may otherwise miss crucial context."
 	echo "Would you like to open the full log file? y/n?"
 	
@@ -41,7 +42,7 @@ then
 	echo "All done."
 	echo "It's still recommended that you view the entire log file -- you may otherwise miss crucial context"
 
-
+	## Asks if user would like to open original log file for comparison.
 	echo "Would you like to open the full log file? y/n?"
 	read response
 	

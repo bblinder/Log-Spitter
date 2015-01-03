@@ -1,5 +1,6 @@
 #!/bin/bash
 
+## The installation script. Pretty straightforward.
 if [[ -e /usr/bin/logspitter ]]
   then
   echo "Looks like Logspitter is already installed on your system."
