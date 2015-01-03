@@ -18,7 +18,7 @@ then
 
 	echo "All done."
 
-	echo "It's still recommended that you read the entire log file -- you may otherwise miss crucial context."
+	echo "It's still recommended that you view the entire log file -- you may otherwise miss crucial context."
 	echo "Would you like to open the full log file? y/n?"
 	
 	read response
