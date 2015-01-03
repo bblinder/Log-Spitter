@@ -14,7 +14,7 @@ if [[ $logfile == *.log ]] ## will read Producer/Procaster logs
 then
 	echo "Thanks. Processing now..."
 
-	egrep -i '(error)|(fail)|(rtmp://)|(port)|(\!)\|(drop)|(stamp)|(lost)|(connect)|(connection)|(auth)|(slow)|(check)|(quality)|(suggestion)' $logfile > /tmp/Logs.txt && open /tmp/Logs.txt
+	egrep -i '(error)|(fail)|(false)|(rtmp://)|(port)|(\!)\|(drop)|(stamp)|(lost)|(connect)|(connection)|(auth)|(slow)|(check)|(quality)|(suggestion)' $logfile > /tmp/Logs.txt && open /tmp/Logs.txt
 
 	echo "All done."
 
