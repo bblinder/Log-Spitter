@@ -27,6 +27,8 @@ then
 	egrep -i '(error=203)|(error=301)|error=)|(not\ found)|(rtmp://)|(http_status)|(usage)|(motherboard)|(lost)|(connect)|(connection)|(auth)|(tcp)|(socket)|(deleted)|(network)|(zixi)|(udp)|(code=)' $logfile > /tmp/Logs.filtered.txt | uniq -d -i && open /tmp/Logs.filtered.txt
 
 	echo "All done."
+	echo "Remember, this to help narrow down possible causes. It's still recommended"
+	echo "that you view the entire log file -- you may otherwise miss crucial context"
 else
 	echo "Oops - not a valid log file. Please use a Studio '.txt' or Producer '.log' file and try again."
 
