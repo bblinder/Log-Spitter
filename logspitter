@@ -14,7 +14,7 @@ if [[ $logfile == *.log ]] ## will read Producer/Procaster logs
 then
 	echo "Thanks. Processing now..."
 
-	egrep -i '(error)|(fail)|(false)|(rtmp://)|(port)|(\!)\|(drop)|(stamp)|(lost)|(connect)|(connection)|(auth)|(slow)|(check)|(quality)|(suggestion)' $logfile > /tmp/ProducerLogs.filtered.txt && open /tmp/ProducerLogs.filtered.txt
+	egrep -i '(error)|(fail)|(false)|(rtmp://)|(port)|(\!)\|(drop)|(stamp)|(lost)|(connect)|(connection)|(auth)|(slow)|(check)|(antilag)|(quality)|(suggestion)' $logfile > /tmp/ProducerLogs.filtered.txt && open /tmp/ProducerLogs.filtered.txt
 
 	echo "All done."
 
@@ -37,7 +37,7 @@ elif
 then
 	echo "Thanks. Processing now..."
 
-	egrep -i '(error=203)|(error=301)|error=)|(not\ found)|(rtmp://)|(http_status)|(usage)|(motherboard)|(lost)|(connect)|(connection)|(auth)|(tcp)|(socket)|(deleted)|(network)|(zixi)|(udp)|(code=)' $logfile > /tmp/StudioLogs.filtered.txt | uniq -d -i && open /tmp/StudioLogs.filtered.txt
+	egrep -i '(error=203)|(error=301)|error=)|(not\ found)|(rtmp://)|(http_status)|(usage)|(motherboard)|(lost)|(connect)|(connection)|(auth)|(tcp)|(socket)|(deleted)|(network)|(zixi)|(udp)|(antilag)|(code=)' $logfile > /tmp/StudioLogs.filtered.txt | uniq -d -i && open /tmp/StudioLogs.filtered.txt
 
 	echo "All done."
 	echo "It's still recommended that you view the entire log file -- you may otherwise miss crucial context"
