@@ -14,7 +14,7 @@ if [[ $logfile == *.log ]] ## will read Producer/Procaster logs
 then
 	echo "Thanks. Processing now..."
 
-	egrep -i '(error)|(fail)|(false)|(rtmp://)|(port)|(\!)\|(drop)|(stamp)|(lost)|(connect)|(connection)|(auth)|(slow)|(check)|(antilag)|(quality)|(suggestion)' $logfile > /tmp/ProducerLogs.filtered.txt && open /tmp/ProducerLogs.filtered.txt
+	egrep -i '(error)|(fail)|(false)|(rtmp://)|(port)|(\!)\|(drop)|(stamp)|(lost)|(connect)|(connection)|(auth)|(slow)|(check)|(antilag)|(quality)|(suggestion)' $logfile > /tmp/ProducerLogs.txt && tail -300 /tmp/ProducerLogs.txt > /tmp/Producerlogs.filtered.txt && open /tmp/ProducerLogs.filtered.txt
 
 	## Asks if user would like to open original log file for comparison.
 	echo "It's still recommended that you view the entire log file -- you may otherwise miss crucial context."
