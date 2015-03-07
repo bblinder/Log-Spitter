@@ -23,7 +23,7 @@ INSTALL(){
 }
 
 ReadProducerLog(){
-    
+
     egrep -i '(error)|(fail)|(false)|(rtmp://)|(port)|(\!)\|(drop)|(stamp)|(lost)|(connect)|(connection)|(auth)|(slow)|(check)|(antilag)|(quality)|(suggestion)' $logfile > /tmp/ProducerLogs.txt && tail -300 /tmp/ProducerLogs.txt > /tmp/Producerlogs.filtered.txt && open /tmp/ProducerLogs.filtered.txt
 
 }
@@ -50,7 +50,6 @@ if [[ $logfile == *.log ]] ## will read Producer/Procaster logs
   echo "Thanks. Processing now..."
   ReadProducerLog
 
-
   ## Asks if user would like to open original log file for comparison.
   echo "It's still recommended that you view the entire log file -- you may otherwise miss crucial context."
   echo "Would you like to open the full log file? y/n?"
@@ -66,27 +65,23 @@ if [[ $logfile == *.log ]] ## will read Producer/Procaster logs
 
   elif
     [[ $logfile == *.txt ]] ## will read Studio logs
-
-  then
-  echo "Thanks. Processing now..."
-  ReadStudioLog
-  
-  echo "It's still recommended that you view the entire log file -- you may otherwise miss crucial context"
-
-  ## Asks if user would like to open original log file for comparison.
-  echo "Would you like to open the full log file? y/n?"
-  read response
-
-  if [[ $response == "y" ]]
+then
+    echo "Thanks. Processing now..."
+    ReadStudioLog
+    echo "It's still recommended that you view the entire log file -- you may otherwise miss crucial context"
+    ## Asks if user would like to open original log file for comparison.
+    
+    echo "Would you like to open the full log file? y/n?"
+    read response
+    
+    if [[ $response == "y" ]]
     then
         open $logfile
     else
         exit 0
     fi
-  
-  else
-      echo "Oops - not a valid log file. Please use a Studio '.txt' or Producer '.log' file and try again."
-  fi
+else
+    echo "Oops - not a valid log file. Please use a Studio '.txt' or Producer '.log' file and try again."
 
 fi
 
