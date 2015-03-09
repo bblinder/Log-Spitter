@@ -1,14 +1,12 @@
 This is a simple log parser tool that filters log files for certain keywords, then spits them out in a text document.
 
-Once you've installed the ZIP, double-click the file called "INSTALL". This will launch the Terminal.
+Once you've installed the ZIP, double-click the file called `logspitter`. This will launch the Terminal.
 
 You may need to enter your password and/or authorize it via your Mac's Security and Privacy section. 
 
-(While the install script is primarily meant for Mac OS X, the logspitter itself will run on any unix/linux system, should you choose to manually install it yourself.)
+(NOTE: if you've previously installed the tool, run the 'UNINSTALL' script first.)
 
-(NOTE: if you've previously installed the tool, run the UNINSTALL script first.)
-
-To use the Log Spitter, simply open a Terminal and type "logspitter", then at the prompt, drag in the log file and hit Enter.
+To use the Log Spitter, simply open a Terminal and type "logspitter", then at the prompt, drag in the log file and hit Enter. You may also double-click the `logspitter` file.
 
 Once you hit Enter, it will open a new text file with the relevant keywords.
 
