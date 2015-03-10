@@ -13,7 +13,7 @@ INSTALL(){
 	  echo "Please run the 'UNINSTALL' script and download a new copy of Logspitter at"
 	  echo "https://github.com/bblinder/Log-Spitter/archive/master.zip"
 	  exit 1
- 
+
   else
 	  sudo cp ~/Downloads/Log-Spitter-master/logspitter /usr/bin/
 	  echo "alias logspitter='/usr/bin/logspitter'" >> ~/.bashrc
@@ -26,7 +26,7 @@ ReadProducerLog(){
 }
 
 ReadStudioLog(){
-	egrep -i '(error=203)|(error=301)|error=)|(not\ found)|(rtmp://)|(http_status)|(usage)|(motherboard)|(lost)|(connect)|(connection)|(auth)|(tcp)|(socket)|(deleted)|(network)|(zixi)|(udp)|(antilag)|(code=)' $logfile > /tmp/StudioLogs.filtered.txt | uniq -d -i && open /tmp/StudioLogs.filtered.txt
+	egrep -i '(error=203)|(error=301)|(error=)|(not\ found)|(rtmp://)|(http_status)|(usage)|(motherboard)|(lost)|(connect)|(connection)|(auth)|(tcp)|(socket)|(deleted)|(network)|(zixi)|(udp)|(antilag)|(code=)' $logfile > /tmp/StudioLogs.filtered.txt | uniq -d -i && open /tmp/StudioLogs.filtered.txt
 
 }
 
@@ -44,13 +44,13 @@ if [[ $logfile == *.log ]] ## will read Producer/Procaster logs
   then
 	  echo "Thanks. Processing now..."
 	  ReadProducerLog
-	  
+
 	  ## Asks if user would like to open original log file for comparison.
 	  echo "It's still recommended that you view the entire log file -- you may otherwise miss crucial context."
 	  echo "Would you like to open the full log file? y/n?"
-	  
+
 	  read response
-	  
+
 	  if [[ $response == "y" ]]
 	  then
 		  open $logfile
@@ -59,24 +59,22 @@ if [[ $logfile == *.log ]] ## will read Producer/Procaster logs
 	  fi
   elif
 	  [[ $logfile == *.txt ]] ## will read Studio logs
-  then
-	  echo "Thanks. Processing now..."
-	  ReadStudioLog
-	  
+    then
+    echo "Thanks. Processing now..."
+    ReadStudioLog
+
 	  echo "It's still recommended that you view the entire log file -- you may otherwise miss crucial context"
 	  ## Asks if user would like to open original log file for comparison.
 	  echo "Would you like to open the full log file? y/n?"
 	  read response
-	  
+
 	  if [[ $response == "y" ]]
 	  then
 		  open $logfile
 	  else
 		  exit 0
 	  fi
-	  
+
   else
 	  echo "Oops - not a valid log file. Please use a Studio '.txt' or Producer '.log' file and try again."
   fi
-
-
