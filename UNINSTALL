@@ -3,8 +3,8 @@
 ## removes logspitter from local bin, then uses sed to replace the ~/.bashrc alias with hashes.
 if [[ -e /usr/bin/logspitter || /usr/local/bin/logspitter ]] 
 then
-	sudo rm /usr/bin/logspitter || /usr/local/bin/logspitter
-	sed -e "s/.*logspitter.*//g" ~/.bashrc > ~/.bashrc
+	sudo rm /usr/bin/logspitter || sudo rm /usr/local/bin/logspitter
+	sed -e 's/.*logspitter.*//g' ~/.bashrc > ~/.bashrc
 
 
 	echo "The Logspitter tool has been removed from your system."
