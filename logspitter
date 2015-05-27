@@ -2,7 +2,7 @@
 
 ## The installation script. Pretty straightforward: checks if logspitter is installed, if not, installs it.
 INSTALL(){
-  if [[ -e /usr/bin/logspitter || -e /usr/local/bin/logspitter ]]
+	if [[ ( -e /usr/bin/logspitter || -e /usr/local/bin/logspitter ) ]]
   then
 	  echo "Looks like Logspitter is already installed on your system."
 	  echo "To run it, simply type 'logspitter' and hit ENTER."

@@ -1,7 +1,7 @@
 #!/bin/bash
 
 ## removes logspitter from local bin, then uses sed to replace the ~/.bashrc alias with hashes.
-if [[ -e /usr/bin/logspitter || /usr/local/bin/logspitter ]] 
+if [[ ( -e /usr/bin/logspitter || -e /usr/local/bin/logspitter ) ]] 
 then
 	sudo rm /usr/bin/logspitter || sudo rm /usr/local/bin/logspitter
 	sed -e 's/.*logspitter.*//g' ~/.bashrc > ~/.bashrc
