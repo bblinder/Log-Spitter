@@ -18,11 +18,11 @@ INSTALL(){
 }
 
 ReadProducerLog(){
-	egrep -i '(error)|(fail)|(false)|(rtmp://)|(port)|(\!)\|(drop)|(stamp)|(lost)|(connect)|(connection)|(auth)|(slow)|(check)|(antilag)|(quality)|(suggestion)' $logfile > /tmp/ProducerLogs.txt && tail -300 /tmp/ProducerLogs.txt > /tmp/Producerlogs.filtered.txt && open /tmp/ProducerLogs.filtered.txt
+	egrep -i '(error)|(fail)|(false)|(rtmp://)|(port)|(\!)\|(drop)|(stamp)|(lost)|(connect)|(connection)|(auth)|(slow)|(check)|(antilag)|(quality)|(suggestion)' "$logfile" > /tmp/ProducerLogs.txt && tail -300 /tmp/ProducerLogs.txt > /tmp/Producerlogs.filtered.txt && open /tmp/ProducerLogs.filtered.txt
 }
 
 ReadStudioLog(){
-	egrep -i '(error=203)|(error=301)|(error=)|(not\ found)|(rtmp://)|(http_status)|(usage)|(motherboard)|(lost)|(connect)|(connection)|(auth)|(tcp)|(socket)|(deleted)|(network)|(zixi)|(udp)|(antilag)|(code=)' $logfile > /tmp/StudioLogs.filtered.txt | uniq -d -i && open /tmp/StudioLogs.filtered.txt
+	egrep -i '(error=203)|(error=301)|(error=)|(not\ found)|(rtmp://)|(http_status)|(usage)|(motherboard)|(lost)|(connect)|(connection)|(auth)|(tcp)|(socket)|(deleted)|(network)|(zixi)|(udp)|(antilag)|(code=)' "$logfile" > /tmp/StudioLogs.filtered.txt | uniq -d -i && open /tmp/StudioLogs.filtered.txt
 }
 
 
@@ -32,7 +32,7 @@ if [[ ! ( -e /usr/bin/logspitter || -e /usr/local/bin/logspitter ) ]] ; then
 fi
 
 echo "Please drag your log file HERE and press ENTER"
-read logfile
+read -r logfile
 
 if [[ $logfile == *.log ]] ## will read Producer/Procaster logs
 then
@@ -42,10 +42,10 @@ then
 	## Asks if user would like to open original log file for comparison.
 	echo "It's still recommended that you view the entire log file -- you may otherwise miss crucial context."
 	echo "Would you like to open the full log file? y/n?"
-	read response
+	read -r response
 	
 	if [[ $response == "y" ]] ; then
-		open $logfile
+		open "$logfile"
 	else
 		exit 0
 	fi
@@ -58,10 +58,10 @@ then
 	echo "It's still recommended that you view the entire log file -- you may otherwise miss crucial context"
 	## Asks if user would like to open original log file for comparison.
 	echo "Would you like to open the full log file? y/n?"
-	read response
+	read -r response
 	
 	if [[ $response == "y" ]] ; then
-		open $logfile
+		open "$logfile"
 	else
 		exit 0
 	fi
